@@ -4,7 +4,7 @@ import {Router, Request, Response} from 'express';
 const router = Router();
 
 router.get('/emp', (req: Request, res: Response)=>{
-    res.send({data:'sin miedo al exito 6'})
+    res.send({data:'sin miedo al exito 4'})
 });
 
  router.get('/', getEmpleado)
