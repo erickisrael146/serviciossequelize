@@ -1,0 +1,15 @@
+import {Router, Request, Response} from 'express';
+ import {CrearEmpleado, getEmpleado, getEmpleadobyid, updateEmpleado} from "../controllers/empleado";
+
+const router = Router();
+
+router.get('/emp', (req: Request, res: Response)=>{
+    res.send({data:'sin miedo al exito 6'})
+});
+
+ router.get('/', getEmpleado)
+ router.post('/', CrearEmpleado);
+ router.put('/:id', updateEmpleado);
+ router.get('/:id', getEmpleadobyid);
+
+export {router}
