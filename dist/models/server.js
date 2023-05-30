@@ -22,7 +22,7 @@ class Server {
     }
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`Aplication corriento ene l puerto ${this.port}`);
+            console.log(`Aplication corriento ene l ppuerto ${this.port}`);
         });
     }
     dbConnect() {
