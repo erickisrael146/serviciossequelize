@@ -35,6 +35,9 @@ class Server {
     }
     router() {
         this.app.use(index_1.router);
+        this.app.get('/', (request, response) => {
+            response.send({ message: 'Node.js, Express, and MysqleApiix' });
+        });
     }
     midlewares() {
         this.app.use(bodyParser.json());
