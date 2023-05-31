@@ -6,7 +6,7 @@ const empleado_1 = require("../controllers/empleado");
 const router = (0, express_1.Router)();
 exports.router = router;
 router.get('/emp', (req, res) => {
-    res.send({ data: 'sin miedo al exito 4' });
+    res.send({ message: 'sin miedo al exito 4' });
 });
 router.get('/', empleado_1.getEmpleado);
 router.post('/', empleado_1.CrearEmpleado);

@@ -2,6 +2,7 @@ import express, {Application} from 'express';
 import db from '../db/connection';
 import {router} from "../router/index"
 import cors from 'cors';
+import {getEmpleado} from "../controllers/empleado";
 
 const bodyParser = require('body-parser')
 // import cors from 'cors';
@@ -43,8 +44,10 @@ class Server{
 
         this.app.use(router)
         this.app.get('/', (request, response) =>{
-            response.send({ message: 'Node.js, Express, and MysqleApiix'})
+            response.send({ message: 'Node.js, Express, and MysqleApiixc'})
         });
+
+        this.app.get('/empleado2', getEmpleado)
     }
     midlewares(){
 

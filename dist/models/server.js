@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const connection_1 = __importDefault(require("../db/connection"));
 const index_1 = require("../router/index");
 const cors_1 = __importDefault(require("cors"));
+const empleado_1 = require("../controllers/empleado");
 const bodyParser = require('body-parser');
 // import cors from 'cors';
 // var cors = require('cors')
@@ -36,8 +37,9 @@ class Server {
     router() {
         this.app.use(index_1.router);
         this.app.get('/', (request, response) => {
-            response.send({ message: 'Node.js, Express, and MysqleApiix' });
+            response.send({ message: 'Node.js, Express, and MysqleApiixc' });
         });
+        this.app.get('/empleado2', empleado_1.getEmpleado);
     }
     midlewares() {
         this.app.use(bodyParser.json());
