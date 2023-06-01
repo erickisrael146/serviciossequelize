@@ -15,6 +15,10 @@ const getEmpleado = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     try {
         res.setHeader("Content-Type", "application/json");
         const employ = yield empleado_1.EmpleadoModel.findAll();
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+        res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
         res.status(200).send(employ);
     }
     catch (e) {
@@ -27,6 +31,10 @@ const CrearEmpleado = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     const { body } = req;
     res.setHeader("Content-Type", "application/json");
     yield empleado_1.EmpleadoModel.create(body);
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
     res.json({
         msg: 'el producto ha sido agregado3'
     });
@@ -41,6 +49,10 @@ const getEmpleadobyid = (req, res) => __awaiter(void 0, void 0, void 0, function
         res.setHeader("Content-Type", "application/json");
         console.log(id);
         const empleado = yield empleado_1.EmpleadoModel.findByPk(id);
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+        res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
         res.status(200).send(empleado);
     }
     catch (e) {
@@ -62,6 +74,10 @@ const updateEmpleado = (req, res) => __awaiter(void 0, void 0, void 0, function*
                 } });
             console.log(viejoEmpleado);
             console.log(empleadonuevo);
+            res.header('Access-Control-Allow-Origin', '*');
+            res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+            res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
             res.status(200).send(empleadonuevo);
         }
         else {

@@ -2,7 +2,7 @@ import express, {Application} from 'express';
 import db from '../db/connection';
 import {router} from "../router/index"
 import cors from 'cors';
-import {getEmpleado} from "../controllers/empleado";
+import {CrearEmpleado, getEmpleado, getEmpleadobyid, updateEmpleado} from "../controllers/empleado";
 
 const bodyParser = require('body-parser')
 // import cors from 'cors';
@@ -48,6 +48,9 @@ class Server{
         });
 
         this.app.get('/empleado2', getEmpleado)
+        this.app.post('/empleado2', CrearEmpleado);
+        this.app.put('empleado2/:id', updateEmpleado);
+        this.app.get('empleado2/:id', getEmpleadobyid);
         this.app.use(router);
     }
     midlewares(){
