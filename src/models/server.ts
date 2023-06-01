@@ -44,13 +44,13 @@ class Server{
 
 
         this.app.get('/', (request, response) =>{
-            response.send({ message: 'Node.js, Express, and MysqleApiixw'})
+            response.send({ message: 'Node.js, Express, and MysqleApiixz'})
         });
 
         this.app.get('/empleado2', getEmpleado)
         this.app.post('/empleado2', CrearEmpleado);
-        this.app.put('empleado2/:id', updateEmpleado);
-        this.app.get('empleado2/:id', getEmpleadobyid);
+        this.app.put('/empleado2/:id', updateEmpleado);
+        this.app.get('/empleado2/:id', getEmpleadobyid);
         this.app.use(router);
     }
     midlewares(){

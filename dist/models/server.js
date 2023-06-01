@@ -36,12 +36,12 @@ class Server {
     }
     router() {
         this.app.get('/', (request, response) => {
-            response.send({ message: 'Node.js, Express, and MysqleApiixw' });
+            response.send({ message: 'Node.js, Express, and MysqleApiixz' });
         });
         this.app.get('/empleado2', empleado_1.getEmpleado);
         this.app.post('/empleado2', empleado_1.CrearEmpleado);
-        this.app.put('empleado2/:id', empleado_1.updateEmpleado);
-        this.app.get('empleado2/:id', empleado_1.getEmpleadobyid);
+        this.app.put('/empleado2/:id', empleado_1.updateEmpleado);
+        this.app.get('/empleado2/:id', empleado_1.getEmpleadobyid);
         this.app.use(index_1.router);
     }
     midlewares() {
