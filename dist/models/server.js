@@ -35,11 +35,11 @@ class Server {
         }
     }
     router() {
-        this.app.use(index_1.router);
         this.app.get('/', (request, response) => {
-            response.send({ message: 'Node.js, Express, and MysqleApiixc' });
+            response.send({ message: 'Node.js, Express, and MysqleApiixw' });
         });
         this.app.get('/empleado2', empleado_1.getEmpleado);
+        this.app.use(index_1.router);
     }
     midlewares() {
         this.app.use(bodyParser.json());
