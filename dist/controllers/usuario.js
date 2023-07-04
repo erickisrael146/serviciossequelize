@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Login = exports.updateUsuario = exports.getUsuariobyid = exports.CrearUsuario = exports.getUsuario = void 0;
 const usuario_1 = require("../models/usuario");
-const bcrypt_1 = __importDefault(require("bcrypt"));
+const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const getUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -36,7 +36,7 @@ const CrearUsuario = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const { body } = req;
     const { name, password } = req.body;
     res.setHeader("Content-Type", "application/json");
-    const hashedPasword = yield bcrypt_1.default.hash(password, 10);
+    const hashedPasword = yield bcryptjs_1.default.hash(password, 10);
     try {
         const usuario = yield usuario_1.UsuarioModel.findOne({ where: { name: name } });
         if (usuario) {
@@ -79,7 +79,7 @@ const Login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             });
         }
         console.log(usuario);
-        const passwordValid = yield bcrypt_1.default.compare(password, usuario.dataValues.password);
+        const passwordValid = yield bcryptjs_1.default.compare(password, usuario.dataValues.password);
         if (!passwordValid) {
             return res.status(400).json({
                 msg: 'password incorrecto'

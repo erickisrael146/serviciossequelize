@@ -1,6 +1,6 @@
 import {Request, Response} from "express"
 import {UsuarioModel} from '../models/usuario'
-import bycrypt from 'bcrypt'
+import bycrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
 const getUsuario = async (req: Request, res: Response) =>{
