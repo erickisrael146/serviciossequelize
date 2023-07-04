@@ -8,6 +8,7 @@ const connection_1 = __importDefault(require("../db/connection"));
 const index_1 = require("../router/index");
 const cors_1 = __importDefault(require("cors"));
 const empleado_1 = require("../controllers/empleado");
+const usuario_1 = require("../controllers/usuario");
 const bodyParser = require('body-parser');
 // import cors from 'cors';
 // var cors = require('cors')
@@ -42,6 +43,11 @@ class Server {
         this.app.post('/empleado2', empleado_1.CrearEmpleado);
         this.app.put('/empleado2/:id', empleado_1.updateEmpleado);
         this.app.get('/empleado2/:id', empleado_1.getEmpleadobyid);
+        this.app.get('/usuario', usuario_1.getUsuario);
+        this.app.post('/usuario', usuario_1.CrearUsuario);
+        this.app.put('/usuario/:id', usuario_1.updateUsuario);
+        this.app.get('/usuario/:id', usuario_1.getUsuariobyid);
+        this.app.post('/login', usuario_1.Login);
         this.app.use(index_1.router);
     }
     midlewares() {
