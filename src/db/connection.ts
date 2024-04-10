@@ -1,7 +1,7 @@
 import {Sequelize} from "sequelize";
 import mysql2 from "mysql2";
 
-const sequelize = new Sequelize('freedb_servicios','freedb_erick','8g8bB4C2!nw@kGW',
+const sequelize = new Sequelize('freedb_servicios','freedb_erick','hARcY&2M&KU93y2',
     {
         host: 'sql.freedb.tech',
         dialect: 'mysql',
